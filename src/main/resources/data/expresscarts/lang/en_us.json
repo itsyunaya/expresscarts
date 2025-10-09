@@ -1,0 +1,13 @@
+{
+    "item.expresscarts.minecart": "Express Minecart",
+    "expresscarts.command.expresscarts": "%1$s version %2$s.",
+    "expresscarts.command.expresscarts.config.maxMinecartSpeed": "Maximum Minecart speed (base): %s",
+    "expresscarts.command.expresscarts.config.waterSpeedMultiplier": "Water speed multiplier: %s",
+    "expresscarts.command.expresscarts.config.brakingEnabled": "Braking enabled: %s",
+    "expresscarts.command.expresscarts.config.brakeSlowdown": "Braking slowdown: %s",
+    "expresscarts.command.expresscarts.config.blockSpeedMultipliers.none": "There are no block speed multipliers set",
+    "expresscarts.command.expresscarts.config.blockSpeedMultipliers.some": "There are %s block speed multipliers set:",
+    "expresscarts.command.expresscarts.config.blockSpeedMultipliers.entry": "%s: %s",
+    "expresscarts.command.expresscarts.hover.github": "Click to open the mod's GitHub page"
+
+}

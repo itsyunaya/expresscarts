@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "expresscarts.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractMinecartAccessor",
+    "AbstractMinecartMixin",
+    "ServerEntityMixin",
+    "NewMinecartBehaviorMixin",
+    "MinecartItemMixin",
+    "CollisionContextMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.0-rc.1"
+	}
+}

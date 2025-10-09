@@ -1,0 +1,2 @@
+- Improved the display of the `/expresscarts` command.
+- Added configurable max speed multipliers based on the block underneath the rails. Set these using `/config expresscarts blockSpeedMultipliers put <block> <multiplier>`.
