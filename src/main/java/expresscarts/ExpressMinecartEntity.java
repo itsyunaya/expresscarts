@@ -2,10 +2,14 @@ package expresscarts;
 
 import eu.pb4.polymer.core.api.entity.PolymerEntity;
 import expresscarts.mixin.AbstractMinecartAccessor;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Minecart;
+import net.minecraft.world.entity.vehicle.NewMinecartBehavior;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -13,6 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import xyz.nucleoid.packettweaker.PacketContext;
 
 import java.util.List;
@@ -66,5 +71,24 @@ public class ExpressMinecartEntity extends Minecart implements PolymerEntity {
         }
 
         return vel;
+    }
+
+    @Nullable
+    public static ExpressMinecartEntity createMinecart(
+            Level level, double x, double y, double z,
+            EntitySpawnReason spawnReason, ItemStack spawnedFrom, @Nullable Player player
+    ) {
+        ExpressMinecartEntity cart = ExpressCarts.EXPRESS_MINECART_ENTITY.create(level, spawnReason);
+        if (cart != null) {
+            cart.setInitialPos(x, y, z);
+            EntityType.createDefaultStackConfig(level, spawnedFrom, player).accept(cart);
+
+            if (cart.getBehavior() instanceof NewMinecartBehavior newBehavior) {
+                BlockPos pos = cart.getCurrentBlockPosOrRailBelow();
+                BlockState state = level.getBlockState(pos);
+                newBehavior.adjustToRails(pos, state, true);
+            }
+        }
+        return cart;
     }
 }
