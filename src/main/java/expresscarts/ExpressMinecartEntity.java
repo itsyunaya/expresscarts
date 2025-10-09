@@ -10,7 +10,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.entity.vehicle.NewMinecartBehavior;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -47,17 +46,6 @@ public class ExpressMinecartEntity extends Minecart implements PolymerEntity {
     @Override
     public @NotNull BlockState getDefaultDisplayBlockState() {
         return Blocks.RED_CARPET.defaultBlockState();
-    }
-
-    @Override
-    protected @NotNull Item getDropItem() {
-        return ModItems.EXPRESS_MINECART;
-    }
-
-
-    @Override
-    public @NotNull ItemStack getPickResult() {
-        return new ItemStack(ModItems.EXPRESS_MINECART);
     }
 
     @Override
