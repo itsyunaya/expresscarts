@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MinecartItem;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,7 +26,7 @@ public abstract class MinecartItemMixin {
     )
     private AbstractMinecart redirectMinecartCreation(Level level, double x, double y, double z, EntityType<AbstractMinecart> type, EntitySpawnReason spawnReason, ItemStack spawnedFrom, Player player) {
 
-        if ("NotModified".equals(spawnedFrom.getHoverName().getString())) {
+        if ("NotModified".equals(spawnedFrom.getHoverName().getString()) || !spawnedFrom.is(Items.MINECART)) {
             return AbstractMinecart.createMinecart(level, x, y, z, type, spawnReason, spawnedFrom, player);
         } else {
             return ExpressMinecartEntity.createMinecart(level, x, y, z, spawnReason, spawnedFrom, player);
