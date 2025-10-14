@@ -7,18 +7,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExpressCartsConfig {
-    @Config(comment = "Maximum speed of Express Minecarts, in blocks per second.")
+    @Config
     public static double maxMinecartSpeed = 16;
 
-    @Config(comment = "Multiplier to the max minecart speed when in water.")
+    @Config
     public static double waterSpeedMultiplier = 0.5;
 
-    @Config(comment = "Whether players may hold the backwards movement key to brake.")
+    @Config
     public static boolean brakingEnabled = true;
 
-    @Config(comment = "Amount by which an Express Minecart's velocity is scaled each tick its passenger holds the brakes.")
+    @Config
     public static double brakeSlowdown = 0.8;
 
-    @Config(comment = "Max speed multipliers when the rails are on certain blocks.")
+    @Config
     public static Map<Block, Double> blockSpeedMultipliers = new HashMap<>();
 }
