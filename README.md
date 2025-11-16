@@ -1,12 +1,13 @@
-# Express Carts
+# expresscarts
 
-<a href="https://modrinth.com/mod/express-carts"><img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg"></a>
-<a href="https://github.com/Seercat3160/express-carts"><img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"></a>
+<a href="https://github.com/itsyunaya/expresscarts"><img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"></a>
 <a href="https://modrinth.com/mod/fabric-api"><img alt="fabric-api" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_vector.svg"></a>
 
-Express Carts is a serverside Fabric mod<!-- modrinth_exclude.start --> for Minecraft<!-- modrinth_exclude.end --> which adds a new type of minecart with a faster speed,
+expresscarts is a serverside Fabric mod<!-- modrinth_exclude.start --> for Minecraft<!-- modrinth_exclude.end --> which adds a new type of minecart with a faster speed,
 improved behaviour, and new features.
 It gives your players a better minecart experience without requiring clientside mods or breaking any technical builds.
+
+This repository is a fork of [Seercat3160's Express Carts Mod](https://github.com/Seercat3160/express-carts) and modifies it to make Express Carts the default when placing a minecart.
 
 - Minecarts become a useful (and fun!) method of travel
 - Twice the speed of vanilla minecarts (configurable)
@@ -31,12 +32,10 @@ which requires installing that mod separately.
 
 ## Usage
 
-An Express Minecart can be crafted using a normal minecart and a redstone torch.
-The Express Minecart item will be seen by Vanilla players as a normal minecart item with an enchantment glint,
-and players with the Polymer-generated resource pack will see a custom item texture.
+An Express Minecart automatically replaces the default minecart, unless renamed to `NotModified`
 
 Only a normal (passenger) minecart variant is available, not any of the other Vanilla minecart types.
-It is used exactly like normal, it just has twice the maximum speed and substantially improved physics behaviours.
+It is used exactly like normal, it just variable speed and substantially improved physics behaviours.
 
 When placed in the world, an Express Minecart will appear as a minecart with a red carpet inside, to distinguish it from a normal minecart.
 
