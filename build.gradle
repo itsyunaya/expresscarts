@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'fabric-loom' version '1.13-SNAPSHOT'
     id 'com.modrinth.minotaur' version '2.+'
     id 'com.github.breadmoirai.github-release' version '2.4.1'
 }
@@ -47,7 +47,7 @@ dependencies {
         officialMojangMappings() {
             nameSyntheticMembers = true
         }
-        parchment("org.parchmentmc.data:parchment-${project.minecraft_version}:${project.parchment_version}@zip")
+        parchment("org.parchmentmc.data:parchment-1.21.9:${project.parchment_version}@zip")
     }
 
     modImplementation include("eu.pb4:polymer-core:${project.polymer_version}")
